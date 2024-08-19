@@ -1,0 +1,14 @@
+{
+  "name": "namste-react",
+  "version": "1.0.0",
+  "description": "This is Namaste React by Prince Gupta",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Prince Gupta",
+  "license": "ISC"
+}
