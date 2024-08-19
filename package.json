@@ -2,13 +2,21 @@
   "name": "namste-react",
   "version": "1.0.0",
   "description": "This is Namaste React by Prince Gupta",
-  "main": "app.js",
   "scripts": {
     "test": "jest"
   },
-  "keywords": [
-    "react"
-  ],
+  "keywords": [],
   "author": "Prince Gupta",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "browsersList": [
+    "Last 2 version"
+  ]
 }
