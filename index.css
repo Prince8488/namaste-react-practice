@@ -1,3 +1,180 @@
-.heading {
-    color: red;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: 80%;
+    /* background-color: #123; */
+}
+
+header {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: black;
+    padding: 0px;
+}
+
+
+.main-heading {
+    max-width: 800px;
+    text-align: center;
+    margin: auto;
+}
+
+
+.main-heading h1 {
+    font-size: 50px;
+}
+
+
+.main-heading p {
+    font-size: 18px;
+    line-height: 26px;
+}
+
+
+.header {
+    overflow: hidden;
+    box-shadow: 0 15px 40px -20px rgba(40, 44, 63, .15);
+    padding: 10px 20px;
+}
+
+
+.header img {
+    width: 50px;
+}
+
+
+.header a {
+    float: left;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+
+
+
+input[type=”text” i] {
+    padding: 8px 20px;
+    border-radius: 50px;
+    background-color: #123;
+    border-color: white;
+    margin-right: 30px;
+    border: 0;
+}
+
+
+.book-button {
+    padding: 10px 30px;
+    border-radius: 50px;
+}
+
+
+
+
+.header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0 !important;
+}
+
+
+
+
+.header-right {
+    float: right;
+    display: flex;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 500px) {
+    .header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+
+    .header-right {
+        float: none;
+    }
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 300px;
+    max-width: 300px;
+    margin: auto;
+    text-align: left;
+    font-family: arial;
+    float: left;
+    height: 350px;
+    margin: 10px;
+}
+
+.title,
+.location {
+    color: grey;
+    font-size: 12px;
+}
+
+button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+}
+
+.img-card {
+    width: 100%;
+    border-radius: 20px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.content {
+    padding: 0 10px
+}
+
+.content h5 {
+    margin: 0px
+}
+
+.content p {
+    margin: 3px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.header-title {
+    margin-left: 10px
+}
+
+.hover-item {
+    transition: 0.3s;
+}
+
+.hover-item:hover {
+    transform: translate(0, -10px);
 }
