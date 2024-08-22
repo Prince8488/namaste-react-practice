@@ -1,4 +1,4 @@
-const Shimmer = () => {
+export const Shimmer = () => {
   return (
     <>
       <br></br>
@@ -164,4 +164,65 @@ const Shimmer = () => {
   );
 };
 
-export default Shimmer;
+export const ShimmerList = () => {
+  return (
+    <div className="primary-container">
+      <div className="shimmer">
+        <div className="wrapper">
+          <div className="image-card animate"></div>
+          <div className="stroke animate titleItem"></div>
+          <div className="stroke animate link"></div>
+          <div className="stroke animate description"></div>
+        </div>
+      </div>
+      <div className="shimmer">
+        <div className="wrapper">
+          <div className="image-card animate"></div>
+          <div className="stroke animate titleItem"></div>
+          <div className="stroke animate link"></div>
+          <div className="stroke animate description"></div>
+        </div>
+      </div>
+      <div className="shimmer">
+        <div className="wrapper">
+          <div className="image-card animate"></div>
+          <div className="stroke animate titleItem"></div>
+          <div className="stroke animate link"></div>
+          <div className="stroke animate description"></div>
+        </div>
+      </div>
+      <div className="shimmer">
+        <div className="wrapper">
+          <div className="image-card animate"></div>
+          <div className="stroke animate titleItem"></div>
+          <div className="stroke animate link"></div>
+          <div className="stroke animate description"></div>
+        </div>
+      </div>
+      <div className="shimmer">
+        <div className="wrapper">
+          <div className="image-card animate"></div>
+          <div className="stroke animate titleItem"></div>
+          <div className="stroke animate link"></div>
+          <div className="stroke animate description"></div>
+        </div>
+      </div>
+      <div className="shimmer">
+        <div className="wrapper">
+          <div className="image-card animate"></div>
+          <div className="stroke animate titleItem"></div>
+          <div className="stroke animate link"></div>
+          <div className="stroke animate description"></div>
+        </div>
+      </div>
+      <div className="shimmer">
+        <div className="wrapper">
+          <div className="image-card animate"></div>
+          <div className="stroke animate titleItem"></div>
+          <div className="stroke animate link"></div>
+          <div className="stroke animate description"></div>
+        </div>
+      </div>
+    </div>
+  );
+};

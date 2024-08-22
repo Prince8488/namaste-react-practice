@@ -3,10 +3,8 @@ import { RES_IMG } from "../utils/constants";
 const Restraurentcard = (props) => {
   const { name, cloudinaryImageId, avgRatingString, sla, cuisines, locality } =
     props.resList.info;
-  const { link } = props.resList.cta.link;
   return (
     <div className="container">
-      {/* <a href={link}> */}
       <div className="card hover-item">
         <img
           className="img-card"
@@ -22,7 +20,6 @@ const Restraurentcard = (props) => {
           <p className="location">{locality}</p>
         </div>
       </div>
-      {/* </a> */}
     </div>
   );
 };

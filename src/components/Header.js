@@ -1,20 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
+import { Link } from "react-router-dom";
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
   const btnNameTrigger = "Logout";
+
+  useEffect(() => {
+    console.log("useEffect callled!");
+  }, []);
   return (
     <header>
       <div className="header">
-        <a href="#" className="logo">
+        <Link to="/" className="logo">
           <img src={LOGO_URL} alt="logo" />
-        </a>
+        </Link>
         <div className="header-right">
-          <a className="active" href="#home">
+          <Link className="active" to="/">
             Home
-          </a>
-          <a href="#contact">Contact</a>
-          <a href="#about">About</a>
+          </Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/about">About</Link>
 
           <button className="book-button">Cart</button>
           <button

@@ -1,6 +1,8 @@
 import Restraurentcard from "./Restraurentcard";
 import { useState, useEffect } from "react";
-import Shimmer from "./Shimmer";
+import { Shimmer } from "./Shimmer";
+import { Link } from "react-router-dom";
+import { RES_LIST_API } from "../utils/constants";
 
 const Body = () => {
   const [restraurantList, setRestraurantList] = useState([]);
@@ -11,9 +13,7 @@ const Body = () => {
   }, []);
 
   const restraurantAPI = async () => {
-    const data = await fetch(
-      "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(RES_LIST_API);
     const jsonData = await data.json();
     setRestraurantList(
       jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
@@ -98,7 +98,12 @@ const Body = () => {
       <br></br>
       <div className="res-list">
         {filterRestraurant.map((restraurant) => (
-          <Restraurentcard key={restraurant.info.id} resList={restraurant} />
+          <Link
+            key={restraurant.info.id}
+            to={"restraurants/" + restraurant.info.id}
+          >
+            <Restraurentcard resList={restraurant} />
+          </Link>
         ))}
       </div>
     </div>
