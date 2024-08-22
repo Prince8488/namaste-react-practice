@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 const Header = () => {
+  const [btnName, setBtnName] = useState("Login");
+  const btnNameTrigger = "Logout";
   return (
     <header>
       <div className="header">
@@ -7,13 +10,6 @@ const Header = () => {
           <img src={LOGO_URL} alt="logo" />
         </a>
         <div className="header-right">
-          {/* 
-        <div className="search-container">
-          <form action="/action_page.php">
-            <input type="text" placeholder="Search.." name="search">
-          </form>
-        </div> */}
-
           <a className="active" href="#home">
             Home
           </a>
@@ -21,6 +17,16 @@ const Header = () => {
           <a href="#about">About</a>
 
           <button className="book-button">Cart</button>
+          <button
+            className="book-button"
+            onClick={(e) => {
+              btnName == "Login"
+                ? setBtnName(btnNameTrigger)
+                : setBtnName("Login");
+            }}
+          >
+            {btnName}
+          </button>
         </div>
       </div>
     </header>
