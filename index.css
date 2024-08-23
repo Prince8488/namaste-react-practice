@@ -727,3 +727,220 @@ img {
         background-position: 1000px 0;
     }
 }
+
+/** user profile **/
+.user_box {
+    width: 350px;
+    height: fit-content;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    background: #ededed;
+}
+
+.user_box1 {
+    margin: 50px;
+}
+
+.user_content {
+    margin: 15px 2px;
+}
+
+.user_image img {
+    height: auto;
+    width: 120px;
+    border-radius: 50%;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+}
+
+.user_level {
+    font-size: 0.7em;
+    background-color: rgb(164, 189, 183, 0.5);
+    width: 50px;
+    padding: 3px;
+    border-radius: 5px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+
+    display: block;
+    margin: 0px auto 10px;
+}
+
+.user_name {
+    font-size: 1.25em;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+.user_job_title {
+    font-size: 0.65em;
+    font-weight: bolder;
+    color: gray;
+    margin-top: -2px;
+}
+
+.user_job_discription {
+    font-size: 0.7em;
+    color: gray;
+    margin: 10px 30px 20px;
+}
+
+.user_icons {
+    margin: 0px 30px;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.user_icons button {
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    font-size: 1em;
+}
+
+ion-icon:hover {
+    color: #58a497;
+    transition: 0.5s;
+}
+
+.user_button button {
+    width: 130px;
+    height: 40px;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+.user_button {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 20px 30px 0px;
+}
+
+.user_button .user_message {
+    background: #ededed;
+    border: 2px solid #000;
+}
+
+.user_button .user_connect {
+    background-color: #000;
+    color: #ededed;
+    border: none;
+}
+
+.user_button_connect:hover {
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.user_button_message:hover {
+    letter-spacing: 1px;
+    transition: 0.5s;
+    background: rgba(88, 164, 151, 0.5);
+}
+
+/* Content-1:End */
+
+/* Content-2:Start */
+.user_box2 {
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.user_box2 img {
+    width: 80px;
+}
+
+.user_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 0px 10px;
+}
+
+.user_h5 {
+    font-weight: bolder;
+    font-size: 1em;
+}
+
+.row p {
+    font-size: 0.8em;
+}
+
+.user_box2 .user_text {
+    text-align: left;
+}
+
+.user_box2 .user_text .user_name {
+    font-size: 1.1em;
+}
+
+.user_box2 .user_text .user_job_title {
+    font-size: 0.6em;
+    margin-bottom: 10px;
+}
+
+.user_box2 .user_text .user_job_discription {
+    margin: 0px;
+}
+
+.user_box2 .user_text .user_about {
+    font-size: 0.9em;
+    font-weight: bolder;
+}
+
+/* Content-2:End */
+
+/* Responsiveness:Start */
+@media screen and (max-width: 480px) {
+    .user_box {
+        width: 100vw;
+        border-radius: 0px;
+    }
+
+    .user_button {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .user_button .user_button {
+        width: 250px;
+    }
+
+    .user_button_connect {
+        margin-top: 10px;
+    }
+
+    .user_content2 {
+        padding: 0px 20px;
+    }
+
+    .user_content2 img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+.user_profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    background: #a4bdb7;
+}
+
+/* Responsiveness:End */
+
+ul {
+    list-style-type: none;
+}
+
+.user_padding {
+    padding: 30px;
+}

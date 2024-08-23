@@ -1,25 +1,12 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ShimmerList } from "./Shimmer";
-import { RES_MENU_API, RES_MENU_IMG } from "../utils/constants";
+import useRestraurant from "../utils/useRestraurant";
+import { RES_MENU_IMG } from "../utils/constants";
 
 const Restaurantdetail = () => {
-  const [restraurantMenuItem, setRestraurantMeenuItem] = useState([]);
-
   const { resId } = useParams();
-  useEffect(() => {
-    restraurantMenu();
-  }, []);
-
-  const restraurantMenu = async () => {
-    const data = await fetch(RES_MENU_API + resId);
-    const resMenu = await data.json();
-    setRestraurantMeenuItem(
-      resMenu?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]
-        ?.card?.card?.itemCards
-    );
-  };
-  return restraurantMenuItem?.length === 0 ? (
+  const resMenu = useRestraurant(resId);
+  return resMenu.length === 0 ? (
     <ShimmerList />
   ) : (
     <div className="primary-container">
@@ -28,7 +15,7 @@ const Restaurantdetail = () => {
           <h3 className="sc-aXZVg gOhTpA">Recommended (20)</h3>
         </button>
         <div>
-          {restraurantMenuItem.map((item) => (
+          {resMenu.map((item) => (
             <div className="restraurantMenu" key={item?.card?.info?.id}>
               <div className="styles_divider__2JelH"></div>
               <div data-testid="normal-dish-item" className="sc-dSCufp kTlHvX">
