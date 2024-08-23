@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useContext } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import About from "./components/About";
@@ -8,15 +8,18 @@ import PagenotFound from "./components/Pagenotfound";
 import Restaurantdetail from "./components/Restaurantdetail";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { ShimmerList } from "./components/Shimmer";
+import UserContext from "./utils/UserContext";
 
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const AppLayout = () => {
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-    </div>
+    <UserContext.Provider value={{ LoggedInUser: "Prince Gupta" }}>
+      <div className="app">
+        <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
 

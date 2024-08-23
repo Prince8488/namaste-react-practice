@@ -1,6 +1,6 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 * {
     margin: 0;
@@ -46,6 +46,10 @@ header {
     width: 50px;
 }
 
+.user {
+    padding: 30px 20px;
+    line-height: 50px;
+}
 
 .header a {
     float: left;
@@ -177,6 +181,7 @@ a {
 .header-title {
     margin-left: 10px
 }
+
 
 .hover-item {
     transition: 0.3s;
@@ -404,6 +409,8 @@ body {
 
 svg:not(:root) {
     overflow: hidden;
+    display: inherit;
+    vertical-align: inherit;
 }
 
 .buqVUw {
@@ -947,4 +954,118 @@ ul {
 
 .user_padding {
     padding: 30px;
+}
+
+
+/** Badge **/
+.badge-area-show {
+    position: relative;
+}
+
+.bagde-flag-wrap {
+    position: absolute;
+    top: 20px;
+    left: -12px;
+}
+
+.bagde-flag-wrap::before {
+    content: "";
+    position: absolute;
+    top: 35px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 12px 12px 0;
+    border-color: transparent #ecb41c transparent transparent;
+}
+
+.bagde-flag {
+    text-transform: capitalize;
+    color: #ffffff;
+    background: #ecb41c;
+    letter-spacing: 0;
+    font-size: 14px;
+    line-height: 15px;
+    font-weight: 600;
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+}
+
+/** accordian **/
+
+details {
+    font-size: var(--title);
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 10px;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+summary {
+    user-select: none;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    background-color: #ffff;
+    padding: 14px;
+    box-shadow: 0 15px 40px -20px #282c3f26;
+
+    &:hover {
+        text-decoration: underline;
+
+        & .title {
+            opacity: 1;
+        }
+
+        & .accordion-icon {
+            opacity: 1;
+        }
+    }
+}
+
+.accordion-title {
+    color: #151518;
+    width: 90%;
+    font-weight: bolder;
+    transition: all 250ms ease-in-out;
+}
+
+.accordion-icon {
+    opacity: 0.5;
+    pointer-events: none;
+    position: absolute;
+    right: 1rem;
+    transition: all 150ms ease-out;
+
+    svg {
+        width: var(--icon-size);
+        height: var(--icon-size);
+        transition: transform 0.3s ease-in-out;
+    }
+}
+
+.accordion-content {
+    color: #3c3e47;
+    padding: var(--content-padding);
+    font-size: var(--content);
+    font-weight: 400;
+    line-height: 1.65;
+}
+
+/** Remove Marker */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/** Rotate Icon */
+details[open] .accordion-icon svg {
+    transform: rotate(180deg);
 }

@@ -2,7 +2,7 @@ import { RES_IMG } from "../utils/constants";
 
 const Restraurentcard = (props) => {
   const { name, cloudinaryImageId, avgRatingString, sla, cuisines, locality } =
-    props.resList.info;
+    props?.resList?.info;
   return (
     <div className="container">
       <div className="card hover-item">
@@ -24,4 +24,22 @@ const Restraurentcard = (props) => {
   );
 };
 
+//Higher Order Componnet
+
+//input -> Restaraurantcard => RestaurantCardStatus
+
+export const withRestaraurantCardNewlyOnboarded = () => {
+  return (props) => {
+    return (
+      <div>
+        <span className="badge-area-show">
+          <span className="bagde-flag-wrap">
+            <span className="bagde-flag">Open</span>
+          </span>
+        </span>
+        <Restraurentcard {...props} />
+      </div>
+    );
+  };
+};
 export default Restraurentcard;

@@ -1,4 +1,6 @@
-import Restraurentcard from "./Restraurentcard";
+import Restraurentcard, {
+  withRestaraurantCardNewlyOnboarded,
+} from "./Restraurentcard";
 import { useState, useEffect } from "react";
 import { Shimmer } from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -8,6 +10,9 @@ const Body = () => {
   const [restraurantList, setRestraurantList] = useState([]);
   const [filterRestraurant, setFilterRestraurant] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  const RestaraurantCardNewlyOnboarded = withRestaraurantCardNewlyOnboarded();
+
   useEffect(() => {
     restraurantAPI();
   }, []);
@@ -102,7 +107,11 @@ const Body = () => {
             key={restraurant.info.id}
             to={"restraurants/" + restraurant.info.id}
           >
-            <Restraurentcard resList={restraurant} />
+            {restraurant?.info?.isOpen ? (
+              <RestaraurantCardNewlyOnboarded resList={restraurant} />
+            ) : (
+              <Restraurentcard resList={restraurant} />
+            )}
           </Link>
         ))}
       </div>
