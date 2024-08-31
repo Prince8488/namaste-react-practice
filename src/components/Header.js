@@ -3,6 +3,7 @@ import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
   const btnNameTrigger = "Logout";
@@ -10,6 +11,8 @@ const Header = () => {
 
   const userContext = useContext(UserContext);
 
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log("cartItems", cartItems);
   return (
     <header>
       <div className="header">
@@ -27,8 +30,12 @@ const Header = () => {
           <Link to="/grocery">Grocery</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/about">About</Link>
-
-          <button className="book-button">Cart</button>
+          <Link to="cart">
+            <button className="book-button cart-btn">
+              <i className="material-icons">shopping_cart</i>
+              <span className="count">{cartItems.length}</span>
+            </button>
+          </Link>
           <button
             className="book-button"
             onClick={(e) => {

@@ -2,18 +2,26 @@ import { useParams } from "react-router-dom";
 import { ShimmerList } from "./Shimmer";
 import useRestraurant from "../utils/useRestraurant";
 import { RES_MENU_IMG } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const Restaurantdetail = () => {
   const { resId } = useParams();
   const resMenu = useRestraurant(resId);
 
+  const dispatch = useDispatch();
+
+  const handleItem = (item) => {
+    //dispatch an action
+    dispatch(addItem(item));
+  };
   return resMenu.length === 0 ? (
     <ShimmerList />
   ) : (
     <div className="primary-container">
       <div className="accordion-container">
         {resMenu.map((item) => (
-          <details key={item.card?.card?.title}>
+          <details open key={item.card?.card?.title}>
             <summary>
               <span className="accordion-title">
                 {item.card?.card?.title +
@@ -104,23 +112,16 @@ const Restaurantdetail = () => {
                             <div>
                               <div className="sc-cKXybt jSBPSP">
                                 <div className="sc-lgjHQU hNNDEj">
-                                  <button className="sc-fatcLD sc-pKqro fIkYGV jmIelv add-button-left-container">
-                                    <div className="sc-aXZVg gnBTYr">−</div>
-                                  </button>
                                   <div className="sc-ggqIjW ieBkxF">
-                                    <button className="sc-fatcLD sc-dBFDNq fIkYGV RYYj">
+                                    <button
+                                      className="sc-fatcLD sc-cgjDci fIkYGV gpQwTP add-button-center-container"
+                                      onClick={() =>
+                                        handleItem(item?.card?.info)
+                                      }
+                                    >
                                       <div className="sc-aXZVg gnBTYr">Add</div>
-                                    </button>
-                                    <button className="sc-fatcLD sc-cgjDci fIkYGV gpQwTP add-button-center-container">
-                                      <div className="sc-aXZVg gnBTYr">Add</div>
-                                    </button>
-                                    <button className="sc-fatcLD sc-epRvzc fIkYGV jenPxt">
-                                      <div className="sc-aXZVg gnBTYr">1</div>
                                     </button>
                                   </div>
-                                  <button className="sc-fatcLD sc-gvPdwL fIkYGV kaObDy add-button-right-container">
-                                    <div className="sc-aXZVg gnBTYr">+</div>
-                                  </button>
                                 </div>
                                 <div className="sc-btwKTd kpKKZB"></div>
                               </div>
