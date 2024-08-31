@@ -12,7 +12,6 @@ const Header = () => {
   const userContext = useContext(UserContext);
 
   const cartItems = useSelector((store) => store.cart.items);
-  console.log("cartItems", cartItems);
   return (
     <header>
       <div className="header">

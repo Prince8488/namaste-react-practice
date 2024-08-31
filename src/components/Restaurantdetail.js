@@ -18,7 +18,7 @@ const Restaurantdetail = () => {
   return resMenu.length === 0 ? (
     <ShimmerList />
   ) : (
-    <div className="primary-container">
+    <div className="primary-container" data-testid="res_list">
       <div className="accordion-container">
         {resMenu.map((item) => (
           <details open key={item.card?.card?.title}>
@@ -114,6 +114,7 @@ const Restaurantdetail = () => {
                                 <div className="sc-lgjHQU hNNDEj">
                                   <div className="sc-ggqIjW ieBkxF">
                                     <button
+                                      data-testid="add"
                                       className="sc-fatcLD sc-cgjDci fIkYGV gpQwTP add-button-center-container"
                                       onClick={() =>
                                         handleItem(item?.card?.info)

@@ -45,6 +45,7 @@ const Body = () => {
                   placeholder="Search your favourite restaurants...."
                   type="text"
                   title="Search"
+                  data-testid="searchInput"
                   value={searchText}
                   onChange={(e) => {
                     setSearchText(e.target.value);
@@ -52,6 +53,7 @@ const Body = () => {
                 />
                 <a
                   href="#"
+                  data-testid="btn"
                   onClick={() => {
                     const filterResSearch = restraurantList.filter(
                       (filterRes) =>

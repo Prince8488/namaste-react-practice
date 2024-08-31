@@ -11,7 +11,6 @@ const Cart = () => {
 
   const handleremoveItem = () => {
     dispatch(removeItem());
-    console.log("after", cardItems);
   };
   return cardItems.length == 0 ? (
     "cart is empty"
@@ -37,7 +36,11 @@ const Cart = () => {
 
           <div className="cart_list_wrap">
             {...cardItems.map((item) => (
-              <div className="cart_responsive" key={item.id}>
+              <div
+                className="cart_responsive"
+                data-itemid="card_item"
+                key={item.id}
+              >
                 <div className="tr_item">
                   <div className="td_item item_img">
                     <img src={RES_MENU_IMG + item.imageId} />

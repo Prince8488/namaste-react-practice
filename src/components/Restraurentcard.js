@@ -4,7 +4,7 @@ const Restraurentcard = (props) => {
   const { name, cloudinaryImageId, avgRatingString, sla, cuisines, locality } =
     props?.resList?.info;
   return (
-    <div className="container">
+    <div data-testid="res-card" className="container">
       <div className="card hover-item">
         <img
           className="img-card"
